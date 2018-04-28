@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context="growing.endless.creative.fortnitedrop.StartPage">
+    tools:context="growing.endless.creative.fortnitechallenge.StartPage">
 
     <LinearLayout
         android:id="@+id/linearLayoutSpinner"
@@ -30,13 +30,15 @@
             android:visibility="visible" />
     </LinearLayout>
 
-    <growing.endless.creative.fortnitedrop.TouchImageView
+    <growing.endless.creative.fortnitechallenge.TouchImageView
         android:id="@+id/imageViewClick"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
 
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/imageViewClick"
@@ -75,7 +77,7 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -88,7 +90,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
@@ -101,6 +103,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/luckiestguy"
                 android:text="@string/location"
                 android:textAlignment="center"
@@ -117,6 +120,7 @@
                 android:background="#ffffff" />
 
             <TextView
+
                 android:id="@+id/textViewChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

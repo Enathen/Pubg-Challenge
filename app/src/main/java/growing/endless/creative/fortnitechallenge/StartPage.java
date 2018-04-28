@@ -1,11 +1,12 @@
-package growing.endless.creative.fortnitedrop;
+package growing.endless.creative.fortnitechallenge;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,11 +15,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.LinkedHashMap;
 
-import static growing.endless.creative.fortnitedrop.Maps.createMaps;
-import static growing.endless.creative.fortnitedrop.Playstyle.getPlaystyle;
-import static growing.endless.creative.fortnitedrop.RandomPicker.getRandom;
+import static growing.endless.creative.fortnitechallenge.Maps.createMaps;
+import static growing.endless.creative.fortnitechallenge.Playstyle.getPlaystyle;
+import static growing.endless.creative.fortnitechallenge.RandomPicker.getRandom;
 
 public class StartPage extends AppCompatActivity {
 
@@ -33,9 +38,6 @@ public class StartPage extends AppCompatActivity {
                 case R.id.navigation_home:
                     Toast.makeText(StartPage.this, "Not Implemented", Toast.LENGTH_LONG).show();
                     return true;
-                case R.id.navigation_dashboard:
-                    Toast.makeText(StartPage.this, "Not Implemented", Toast.LENGTH_LONG).show();
-                    return true;
                 case R.id.navigation_notifications:
                     Toast.makeText(StartPage.this, "Not Implemented", Toast.LENGTH_LONG).show();
                     return true;
@@ -45,13 +47,16 @@ public class StartPage extends AppCompatActivity {
     };
     private String TAG = "STARTPAGE";
     private View buttonRollClick;
+    private InterstitialAd mInterstitialAd;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
-
+        MobileAds.initialize(this, "ca-app-pub-3607354849437438~4991381810");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7234401779");
         mTextMessage = (TextView) findViewById(R.id.message);
         final TouchImageView viewById = (TouchImageView) findViewById(R.id.imageViewClick);
         final LinkedHashMap<String, Map> maps = createMaps(this);
@@ -61,6 +66,7 @@ public class StartPage extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 Map map = (Map) maps.values().toArray()[0];
                 buttonRollClick(viewById, map);
             }
@@ -82,7 +88,6 @@ public class StartPage extends AppCompatActivity {
                     final TouchImageView touchImageView = (TouchImageView) findViewById(R.id.imageViewClick);
                     final Map map = maps.get(((TextView) view).getText());
                     touchImageView.setImageDrawable(getDrawable(map.getMap()));
-                    Log.d(TAG, "onItemSelected: "+ touchImageView.getMeasuredWidth());
                     buttonRollClick.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -104,11 +109,30 @@ public class StartPage extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
     public void buttonRollClick(TouchImageView viewById, Map map){
+        final SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        SharedPreferences.Editor sharedPreferencesEditor =
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit();
+        int interstitial = sharedPreferences.getInt("interstitial", 0);
+        if(interstitial != 4){
+            if(interstitial == 0)
+                mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("85566EDEF434C46837B6373FFB555990").build());
+            sharedPreferencesEditor.putInt(
+                    "interstitial", interstitial+1);
+            sharedPreferencesEditor.apply();
+        }else{
+
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+
+            }
+
+            sharedPreferencesEditor.putInt(
+                    "interstitial", 0);
+            sharedPreferencesEditor.apply();
+        }
 
         Location location = (Location) getRandom(map.getLocations());
-
-        Log.d(TAG, "buttonRollClick: "+ viewById.getMeasuredWidth());
-
         new DrawOnMap(viewById,map.getMap(), location, StartPage.this);
         ((TextView)findViewById(R.id.textViewLocation)).setText(location.getName());
         ((TextView)findViewById(R.id.textViewChallenge)).setText((String)getRandom(getPlaystyle(StartPage.this)));

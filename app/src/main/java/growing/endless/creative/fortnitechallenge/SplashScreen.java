@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitedrop;
+package growing.endless.creative.fortnitechallenge;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

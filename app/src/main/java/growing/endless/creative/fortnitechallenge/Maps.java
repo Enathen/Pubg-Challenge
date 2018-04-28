@@ -1,10 +1,10 @@
-package growing.endless.creative.fortnitedrop;
+package growing.endless.creative.fortnitechallenge;
 
 import android.content.Context;
 
 import java.util.LinkedHashMap;
 
-import static growing.endless.creative.fortnitedrop.Locations.getFortniteLocations;
+import static growing.endless.creative.fortnitechallenge.Locations.getFortniteLocations;
 
 /**
  * @author Jonathan Alexander Norberg

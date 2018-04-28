@@ -10,7 +10,7 @@
  * Extends Android ImageView to include pinch zooming, panning, fling and double tap zoom.
  */
 
-package growing.endless.creative.fortnitedrop;
+package growing.endless.creative.fortnitechallenge;
 
 import android.annotation.TargetApi;
 import android.content.Context;
