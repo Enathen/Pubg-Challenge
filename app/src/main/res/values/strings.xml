@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Fortnite Drop</string>
+    <string name="title_home">Drop</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="pleasantPark">Pleasant Park</string>
+    <string name="tiltedTowers">Tilted Towers</string>
+    <string name="greasyGrove">Greasy Grove</string>
+    <string name="flushFactory">Flush Factory</string>
+    <string name="fatalFields">Fatal Fields</string>
+    <string name="anarchyAcres">Anarchy Acres</string>
+    <string name="retailRows">Retail Rows</string>
+    <string name="luckyLanding">Lucky Landing</string>
+    <string name="junkJunction">Junk Junction</string>
+    <string name="hauntedHills">Haunted Hills</string>
+    <string name="snobbyShores">Snobby Shores</string>
+    <string name="shiftyShafts">Shifty Shafts</string>
+    <string name="lootLake">Loot Lake</string>
+    <string name="dustyDepot">Dusty Depot</string>
+    <string name="saltySprings">Salty SPrings</string>
+    <string name="tomatoTown">Tomato Town</string>
+    <string name="wailingWoods">Wailing Woods</string>
+    <string name="lonelyLodge">Lonely Lodge</string>
+    <string name="moistyMire">Moisty Mire</string>
+    <string name="onlyHandguns">You may only use handguns!</string>
+    <string name="withoutKilling">Only kill the last person</string>
+    <string name="onlySniper">You may only use sniper</string>
+    <string name="onlyHipfireSniper">You may only use a sniper and only use hip-fire</string>
+    <string name="onlyShotgun">You may only use Shotgun</string>
+    <string name="onlyMelee">You may only use melee though if you kill someone You may use their weapon</string>
+    <string name="randomRoll">Random Roll</string>
+    <string name="location">Location</string>
+    <string name="challenge">Challenge</string>
+</resources>
