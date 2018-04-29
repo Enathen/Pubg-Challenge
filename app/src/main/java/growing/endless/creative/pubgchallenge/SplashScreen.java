@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitechallenge;
+package growing.endless.creative.pubgchallenge;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.MobileAds;
 
-import static growing.endless.creative.fortnitechallenge.RandomPicker.getRandom;
-import static growing.endless.creative.fortnitechallenge.RandomTip.getSplashScreenTip;
+import static growing.endless.creative.pubgchallenge.RandomPicker.getRandom;
+import static growing.endless.creative.pubgchallenge.RandomTip.getSplashScreenTip;
 import static java.lang.Thread.sleep;
 
 
@@ -68,7 +68,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
 
-                MobileAds.initialize(getBaseContext(),"ca-app-pub-3607354849437438~4991381810");
+                MobileAds.initialize(getBaseContext(),"ca-app-pub-3607354849437438~4106170391");
                 try {
                     sleep(1000);
                 } catch (InterruptedException e) {

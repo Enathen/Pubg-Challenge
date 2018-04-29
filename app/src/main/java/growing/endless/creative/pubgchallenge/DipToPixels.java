@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitechallenge;
+package growing.endless.creative.pubgchallenge;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitechallenge;
+package growing.endless.creative.pubgchallenge;
 
 import android.app.Activity;
 import android.content.Context;

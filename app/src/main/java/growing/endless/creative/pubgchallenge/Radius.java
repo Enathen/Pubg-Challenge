@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitechallenge;
+package growing.endless.creative.pubgchallenge;
 
 /**
  * @author Jonathan Alexander Norberg
@@ -14,5 +14,8 @@ public class Radius {
     }
     static int getLarge(){
         return 75;
+    }
+    static int getArea(){
+        return 200;
     }
 }

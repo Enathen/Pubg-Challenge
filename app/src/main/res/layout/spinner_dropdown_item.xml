@@ -7,4 +7,5 @@
     android:ellipsize="marquee"
     android:textSize="24sp"
     android:fontFamily="@font/luckiestguy"
+    android:background="@color/colorPrimaryDark"
     android:textColor="@color/colorAccent"/>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context="growing.endless.creative.fortnitechallenge.StartPage">
+    tools:context="growing.endless.creative.pubgchallenge.StartPage">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -279,7 +279,7 @@
             android:visibility="visible" />
     </LinearLayout>
 
-    <growing.endless.creative.fortnitechallenge.TouchImageView
+    <growing.endless.creative.pubgchallenge.TouchImageView
         android:id="@+id/imageViewClick"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -361,7 +361,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#ffffff" />
+                android:background="@color/colorWhite" />
 
             <TextView
 
@@ -393,6 +393,11 @@
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
+        app:itemIconTint="@color/bottom"
+
+        app:itemBackground="@color/colorWhite"
+        android:backgroundTint="@color/colorWhite"
+        app:itemTextColor="@color/bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

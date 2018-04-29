@@ -1,4 +1,4 @@
-package growing.endless.creative.fortnitechallenge;
+package growing.endless.creative.pubgchallenge;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -26,9 +26,9 @@ import com.google.android.gms.ads.InterstitialAd;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-import static growing.endless.creative.fortnitechallenge.Maps.createMaps;
-import static growing.endless.creative.fortnitechallenge.Challenge.getChallenge;
-import static growing.endless.creative.fortnitechallenge.RandomPicker.getRandom;
+import static growing.endless.creative.pubgchallenge.Maps.createMaps;
+import static growing.endless.creative.pubgchallenge.Challenge.getChallenge;
+import static growing.endless.creative.pubgchallenge.RandomPicker.getRandom;
 
 public class StartPage extends AppCompatActivity {
 
@@ -87,7 +87,7 @@ public class StartPage extends AppCompatActivity {
         setContentView(R.layout.activity_start_page);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7234401779");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7255077910");
         mTextMessage = (TextView) findViewById(R.id.message);
         final TouchImageView viewById = (TouchImageView) findViewById(R.id.imageViewClick);
         maps = createMaps(this);
