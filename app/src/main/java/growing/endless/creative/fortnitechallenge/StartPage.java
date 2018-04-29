@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,7 +22,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -42,8 +42,12 @@ public class StartPage extends AppCompatActivity {
             Log.d(TAG, "onNavigationItemSelected: "+ item.getItemId());
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    findViewById(R.id.scrollView).setVisibility(View.VISIBLE);
-                    findViewById(R.id.button).setVisibility(View.VISIBLE);
+                    if(findViewById(R.id.lin) != null){
+                        findViewById(R.id.lin).setVisibility(View.VISIBLE);
+                    }else{
+                        findViewById(R.id.scrollView).setVisibility(View.VISIBLE);
+                    }
+                    findViewById(R.id.LinearLayoutButton).setVisibility(View.VISIBLE);
                     if(maps.size()>1){
                         findViewById(R.id.linearLayoutSpinner).setVisibility(View.VISIBLE);
 
@@ -51,15 +55,17 @@ public class StartPage extends AppCompatActivity {
                     //Map map = (Map) maps.values().toArray()[0];
                     //new DrawOnMap((TouchImageView) findViewById(R.id.imageViewClick),map.getMap(), StartPage.this);
                     findViewById(R.id.imageViewClick).setVisibility(View.VISIBLE);
-                    findViewById(R.id.scrollView).setVisibility(View.VISIBLE);
                     findViewById(R.id.scrollView2).setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_notifications:
-                    findViewById(R.id.scrollView).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.button).setVisibility(View.INVISIBLE);
+                    if(findViewById(R.id.lin) != null){
+                        findViewById(R.id.lin).setVisibility(View.INVISIBLE);
+                    }else{
+                        findViewById(R.id.scrollView).setVisibility(View.INVISIBLE);
+                    }
+                    findViewById(R.id.LinearLayoutButton).setVisibility(View.INVISIBLE);
                     findViewById(R.id.imageViewClick).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.linearLayoutSpinner).setVisibility(View.INVISIBLE);
-                    findViewById(R.id.scrollView).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.linearLayoutSpinner).setVisibility(View.GONE);
                     findViewById(R.id.scrollView2).setVisibility(View.VISIBLE);
 
 
@@ -77,7 +83,7 @@ public class StartPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_page);
-        MobileAds.initialize(this, "ca-app-pub-3607354849437438~4991381810");
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7234401779");
         mTextMessage = (TextView) findViewById(R.id.message);
@@ -144,12 +150,15 @@ public class StartPage extends AppCompatActivity {
         });
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeEasy));
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeFunny));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeDuoSquad));
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeYouWillDieAlot));
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxLargeTown));
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxCommonTown));
         checkboxCheck((CheckBox) findViewById(R.id.checkBoxUnnamedTown));
     }
     private void checkboxCheck(CheckBox checkBox){
+
+        checkBox.setTypeface(ResourcesCompat.getFont(this, R.font.luckiestguy));
         final SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
         checkBox.setChecked(sharedPreferences.getBoolean(String.valueOf(checkBox.getText()),true));
@@ -189,6 +198,7 @@ public class StartPage extends AppCompatActivity {
         }
         if(map.getLocations().isEmpty()){
             ((TextView)findViewById(R.id.textViewLocation)).setText(getString(R.string.noLocation));
+            new DrawOnMap(viewById,map.getMap(),StartPage.this);
         }else{
             Location location = (Location) getRandom(map.getLocations());
             new DrawOnMap(viewById,map.getMap(), location, StartPage.this);

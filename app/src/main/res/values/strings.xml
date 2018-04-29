@@ -2,32 +2,9 @@
     <string name="app_name">Fortnite Challenge</string>
     <string name="title_home">Challenge</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="pleasantPark">Pleasant Park</string>
-    <string name="tiltedTowers">Tilted Towers</string>
-    <string name="greasyGrove">Greasy Grove</string>
-    <string name="flushFactory">Flush Factory</string>
-    <string name="fatalFields">Fatal Fields</string>
-    <string name="anarchyAcres">Anarchy Acres</string>
-    <string name="retailRows">Retail Rows</string>
-    <string name="luckyLanding">Lucky Landing</string>
-    <string name="junkJunction">Junk Junction</string>
-    <string name="hauntedHills">Haunted Hills</string>
-    <string name="snobbyShores">Snobby Shores</string>
-    <string name="shiftyShafts">Shifty Shafts</string>
-    <string name="lootLake">Loot Lake</string>
-    <string name="dustyDepot">Dusty Depot</string>
-    <string name="saltySprings">Salty Springs</string>
-    <string name="tomatoTown">Tomato Town</string>
-    <string name="wailingWoods">Wailing Woods</string>
-    <string name="lonelyLodge">Lonely Lodge</string>
-    <string name="moistyMire">Moisty Mire</string>
-    <string name="onlyHandguns">You may only use handguns!</string>
-    <string name="withoutKilling">Only kill the last person</string>
-    <string name="onlySniper">You may only use sniper</string>
-    <string name="onlyHipfireSniper">You may only use a sniper and only use hip-fire</string>
-    <string name="onlyShotgun">You may only use Shotgun</string>
-    <string name="onlyMelee">You may only use melee though if you kill someone You may use their weapon</string>
+    <string name="title_notifications">Settings</string>
+
+
     <string name="randomRoll">Random Roll</string>
     <string name="location">Location</string>
     <string name="locations">Locations</string>
@@ -35,8 +12,10 @@
     <string name="challenges">Challenges</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="easy">Easy</string>
+    <string name="easy">Easy Peasy lemon squeezy</string>
     <string name="youWillDieAlot">You will die A lot</string>
     <string name="funny">Funny</string>
     <string name="commonTown">Common towns</string>
@@ -47,4 +26,55 @@
     <string name="sendTipsFrom">Send Tips From</string>
     <string name="noLocation">No Locations Selected</string>
     <string name="noPlaystyle">No Playstyle Selected</string>
+
+    <string name="fortnitePleasantPark">Pleasant Park</string>
+    <string name="fortniteTiltedTowers">Tilted Towers</string>
+    <string name="fortniteGreasyGrove">Greasy Grove</string>
+    <string name="fortniteFlushFactory">Flush Factory</string>
+    <string name="fortniteFatalFields">Fatal Fields</string>
+    <string name="fortniteAnarchyAcres">Anarchy Acres</string>
+    <string name="fortniteRetailRows">Retail Rows</string>
+    <string name="fortniteLuckyLanding">Lucky Landing</string>
+    <string name="fortniteJunkJunction">Junk Junction</string>
+    <string name="fortniteHauntedHills">Haunted Hills</string>
+    <string name="fortniteSnobbyShores">Snobby Shores</string>
+    <string name="fortniteShiftyShafts">Shifty Shafts</string>
+    <string name="fortniteLootLake">Loot Lake</string>
+    <string name="fortniteDustyDepot">Dusty Depot</string>
+    <string name="fortniteSaltySprings">Salty Springs</string>
+    <string name="fortniteTomatoTown">Tomato Town</string>
+    <string name="fortniteWailingWoods">Wailing Woods</string>
+    <string name="fortniteLonelyLodge">Lonely Lodge</string>
+    <string name="fortniteMoistyMire">Moisty Mire</string>
+
+    <string name="challengeOnlyHandguns">You may only use handguns!</string>
+    <string name="challengeWithoutKilling">Only kill the last person that\'s not on your team</string>
+    <string name="challengeOnlySniper">You may only use sniper</string>
+    <string name="challengeOnlyHipfireSniper">You may only use a sniper and only use hip-fire</string>
+    <string name="challengeOnlyShotgun">You may only use Shotgun</string>
+    <string name="challengeOnlyMelee">You may only use melee though if you kill someone You may use their weapons</string>
+
+    <string name="tipToWin">Try To Win</string>
+    <string name="tipDontDie">Try not To die</string>
+    <string name="tipDontRPG">Try not To rpg yourself</string>
+    <string name="tipDontKill">Try not To Kill yourself, mid game</string>
+    <string name="tipWin">You win if your last alive</string>
+    <string name="tipNoShit">No Shit!</string>
+    <string name="tipDontGrenade">Try not to grenade yourself</string>
+    <string name="tipLoose">You loose if you die</string>
+    <string name="tipOhReally">Oh Really?</string>
+    <string name="tipBiggerChangeSquad">You have bigger change winning in squad! or do you…?</string>
+
+    <string name="tipStayAlive">Try to stay alive</string>
+    <string name="tipAtLeast">You can at least try to win</string>
+    <string name="tipMama">Mama didn\'t raise no quitters</string>
+    <string name="tipMamadad">Mama didn\'t raise no quitters, but apparently your dad did</string>
+
+
+    <string name="squadOrDuoLove">If your in squad or duo, tell them you love them! Keep on play and love</string>
+    <string name="squadOrDuoSilence">If your in squad or duo, you may not communicate</string>
+    <string name="squadOrDuoCarePackage">If your in squad or duo, if any member sees a care-package you must immediately run to it. You may kill enemies that try to hinder you.</string>
+    <string name="squadOrDuoCarePackageNoKIll">If your in squad or duo, if any member sees a care-package you must immediately run to it. You may not kill enemies that try to hinder you. when you or another team picked up the care package you may start killing enemies</string>
+    <string name="squadOrDuoCareKillFriend">If your in squad or duo, Kill your teammate/s and win. Do not tell them</string>
+    <string name="duoSquad">Squad Duo</string>
 </resources>

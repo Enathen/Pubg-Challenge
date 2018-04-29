@@ -7,12 +7,12 @@ package growing.endless.creative.fortnitechallenge;
 
 public class Radius {
     static int getSmall(){
-        return 10;
-    }
-    static int getMedium(){
         return 25;
     }
-    static int getLarge(){
+    static int getMedium(){
         return 50;
+    }
+    static int getLarge(){
+        return 75;
     }
 }
