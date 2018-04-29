@@ -17,7 +17,7 @@
     <string name="shiftyShafts">Shifty Shafts</string>
     <string name="lootLake">Loot Lake</string>
     <string name="dustyDepot">Dusty Depot</string>
-    <string name="saltySprings">Salty SPrings</string>
+    <string name="saltySprings">Salty Springs</string>
     <string name="tomatoTown">Tomato Town</string>
     <string name="wailingWoods">Wailing Woods</string>
     <string name="lonelyLodge">Lonely Lodge</string>
@@ -30,5 +30,21 @@
     <string name="onlyMelee">You may only use melee though if you kill someone You may use their weapon</string>
     <string name="randomRoll">Random Roll</string>
     <string name="location">Location</string>
+    <string name="locations">Locations</string>
     <string name="challenge">Challenge</string>
+    <string name="challenges">Challenges</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="easy">Easy</string>
+    <string name="youWillDieAlot">You will die A lot</string>
+    <string name="funny">Funny</string>
+    <string name="commonTown">Common towns</string>
+    <string name="largeTown">Large towns</string>
+    <string name="unnamedTown">Unnamed Towns</string>
+    <string name="crengr">instagram.com/creativeendlessgrowing/</string>
+    <string name="sendTips">Send Tips</string>
+    <string name="sendTipsFrom">Send Tips From</string>
+    <string name="noLocation">No Locations Selected</string>
+    <string name="noPlaystyle">No Playstyle Selected</string>
 </resources>

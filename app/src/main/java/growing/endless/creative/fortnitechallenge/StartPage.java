@@ -1,24 +1,29 @@
 package growing.endless.creative.fortnitechallenge;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import static growing.endless.creative.fortnitechallenge.Maps.createMaps;
@@ -34,12 +39,30 @@ public class StartPage extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Log.d(TAG, "onNavigationItemSelected: "+ item.getItemId());
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Toast.makeText(StartPage.this, "Not Implemented", Toast.LENGTH_LONG).show();
+                    findViewById(R.id.scrollView).setVisibility(View.VISIBLE);
+                    findViewById(R.id.button).setVisibility(View.VISIBLE);
+                    if(maps.size()>1){
+                        findViewById(R.id.linearLayoutSpinner).setVisibility(View.VISIBLE);
+
+                    }
+                    //Map map = (Map) maps.values().toArray()[0];
+                    //new DrawOnMap((TouchImageView) findViewById(R.id.imageViewClick),map.getMap(), StartPage.this);
+                    findViewById(R.id.imageViewClick).setVisibility(View.VISIBLE);
+                    findViewById(R.id.scrollView).setVisibility(View.VISIBLE);
+                    findViewById(R.id.scrollView2).setVisibility(View.INVISIBLE);
                     return true;
                 case R.id.navigation_notifications:
-                    Toast.makeText(StartPage.this, "Not Implemented", Toast.LENGTH_LONG).show();
+                    findViewById(R.id.scrollView).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.button).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.imageViewClick).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.linearLayoutSpinner).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.scrollView).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.scrollView2).setVisibility(View.VISIBLE);
+
+
                     return true;
             }
             return false;
@@ -48,7 +71,7 @@ public class StartPage extends AppCompatActivity {
     private String TAG = "STARTPAGE";
     private View buttonRollClick;
     private InterstitialAd mInterstitialAd;
-
+    LinkedHashMap<String, Map> maps = new LinkedHashMap<>();
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +82,7 @@ public class StartPage extends AppCompatActivity {
         mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7234401779");
         mTextMessage = (TextView) findViewById(R.id.message);
         final TouchImageView viewById = (TouchImageView) findViewById(R.id.imageViewClick);
-        final LinkedHashMap<String, Map> maps = createMaps(this);
+        maps = createMaps(this);
         buttonRollClick = findViewById(R.id.button);
         buttonRollClick.setOnClickListener(new View.OnClickListener() {
 
@@ -105,8 +128,41 @@ public class StartPage extends AppCompatActivity {
             });
 
         }
+        setupSettingsView();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    private void setupSettingsView() {
+        findViewById(R.id.buttonSendTips).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto", "creativeEndlessGrowing@gmail.com", null));
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.sendTipsFrom)));
+            }
+        });
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeEasy));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeFunny));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxChallengeYouWillDieAlot));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxLargeTown));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxCommonTown));
+        checkboxCheck((CheckBox) findViewById(R.id.checkBoxUnnamedTown));
+    }
+    private void checkboxCheck(CheckBox checkBox){
+        final SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        checkBox.setChecked(sharedPreferences.getBoolean(String.valueOf(checkBox.getText()),true));
+        final SharedPreferences.Editor sharedPreferencesEditor =
+                PreferenceManager.getDefaultSharedPreferences(this).edit();
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                sharedPreferencesEditor.putBoolean(String.valueOf(compoundButton.getText()),b).commit();
+                maps = createMaps(StartPage.this);
+            }
+        });
+
     }
     public void buttonRollClick(TouchImageView viewById, Map map){
         final SharedPreferences sharedPreferences =
@@ -131,11 +187,21 @@ public class StartPage extends AppCompatActivity {
                     "interstitial", 0);
             sharedPreferencesEditor.apply();
         }
+        if(map.getLocations().isEmpty()){
+            ((TextView)findViewById(R.id.textViewLocation)).setText(getString(R.string.noLocation));
+        }else{
+            Location location = (Location) getRandom(map.getLocations());
+            new DrawOnMap(viewById,map.getMap(), location, StartPage.this);
+            ((TextView)findViewById(R.id.textViewLocation)).setText(location.getName());
 
-        Location location = (Location) getRandom(map.getLocations());
-        new DrawOnMap(viewById,map.getMap(), location, StartPage.this);
-        ((TextView)findViewById(R.id.textViewLocation)).setText(location.getName());
-        ((TextView)findViewById(R.id.textViewChallenge)).setText((String)getRandom(getPlaystyle(StartPage.this)));
+        }
+        ArrayList<String> playstyle = getPlaystyle(StartPage.this);
+        if(playstyle.isEmpty()){
+            ((TextView)findViewById(R.id.textViewChallenge)).setText(getString(R.string.noPlaystyle));
+        }else{
+            ((TextView)findViewById(R.id.textViewChallenge)).setText((String) getRandom(playstyle));
+
+        }
     }
 
 

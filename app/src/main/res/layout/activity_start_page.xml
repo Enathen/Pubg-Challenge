@@ -8,6 +8,187 @@
     android:background="@drawable/gradient"
     tools:context="growing.endless.creative.fortnitechallenge.StartPage">
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewChallenges"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center"
+
+                    android:text="@string/challenges"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxChallengeEasy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/easy"
+                    android:textColor="@color/colorWhite" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxChallengeYouWillDieAlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/youWillDieAlot"
+                    android:textColor="@color/colorWhite" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxChallengeFunny"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="22sp"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/funny"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewLocations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/luckiestguy"
+                    android:gravity="center"
+                    android:text="@string/locations"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxCommonTown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/commonTown"
+                    android:textSize="22sp"
+                    android:textColor="@color/colorWhite" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxLargeTown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:buttonTint="@color/colorAccent"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/largeTown"
+                    android:textColor="@color/colorWhite" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxUnnamedTown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:buttonTint="@color/colorAccent"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/unnamedTown"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="50dp"
+
+                    android:layout_height="50dp"
+
+                    android:layout_weight="1"
+                    android:src="@drawable/insta" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:autoLink="web"
+                    android:fontFamily="@font/luckiestguy"
+                    android:text="@string/crengr"
+
+                    android:textColor="@color/colorWhite"
+                    android:textSize="22sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/buttonSendTips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/luckiestguy"
+                android:text="@string/sendTips"
+                android:textColor="@color/colorPrimary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADmob chrisbanes:PhotoView google Font Luckiest guy, TouchImageView https://github.com/MikeOrtiz/TouchImageView/blob/master/LICENSE" />
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayoutSpinner"
         android:layout_width="match_parent"
@@ -38,26 +219,12 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/imageViewClick"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutSpinner"
         app:srcCompat="@drawable/map" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation">
-
-    </android.support.design.widget.BottomNavigationView>
 
     <Button
         android:id="@+id/button"
@@ -75,7 +242,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginBottom="8dp"
@@ -140,5 +307,19 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation">
+
+    </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>

@@ -46,4 +46,7 @@ public class Map {
     public ArrayList<Location> getLocations() {
         return locations;
     }
+
+    public void updateLocations() {
+    }
 }

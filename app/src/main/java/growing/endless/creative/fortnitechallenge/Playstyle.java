@@ -1,6 +1,10 @@
 package growing.endless.creative.fortnitechallenge;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.widget.CheckBox;
 
 import java.util.ArrayList;
 
@@ -10,9 +14,19 @@ import java.util.ArrayList;
  */
 
 public class Playstyle {
-    public static ArrayList<String> getPlaystyle(Context context){
+    public static ArrayList<String> getPlaystyle(Activity context){
         ArrayList<String> playStyles = new ArrayList<>();
-        addSerious(context, playStyles);
+        final SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxChallengeYouWillDieAlot)).getText()),true)) {
+            addSerious(context, playStyles);
+        }
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxChallengeEasy)).getText()),true)) {
+
+        }
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxChallengeFunny)).getText()),true)) {
+
+        }
         return playStyles;
     }
 

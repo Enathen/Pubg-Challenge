@@ -1,6 +1,6 @@
 package growing.endless.creative.fortnitechallenge;
 
-import android.content.Context;
+import android.app.Activity;
 
 import java.util.LinkedHashMap;
 
@@ -13,7 +13,7 @@ import static growing.endless.creative.fortnitechallenge.Locations.getFortniteLo
 
 class Maps {
 
-    static LinkedHashMap<String,Map> createMaps(Context context){
+    static LinkedHashMap<String,Map> createMaps(Activity context){
         LinkedHashMap<String,Map> maps = new LinkedHashMap<>();
         maps.put("Fortnite",new Map(R.drawable.map, "Fortnite",getFortniteLocations(context)));
 

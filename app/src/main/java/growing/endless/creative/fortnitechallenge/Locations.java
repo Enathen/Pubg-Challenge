@@ -1,6 +1,10 @@
 package growing.endless.creative.fortnitechallenge;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.widget.CheckBox;
 
 import java.util.ArrayList;
 
@@ -11,14 +15,22 @@ import java.util.ArrayList;
 
 public class Locations {
 
-    public static ArrayList<Location> getFortniteLocations(Context context){
+    public static ArrayList<Location> getFortniteLocations(Activity context){
+        final SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(context);
         ArrayList<Location> locations = new ArrayList<>();
-        fortniteAddBigTowns(context, locations);
-        fortniteAddMediumTowns(context, locations);
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxLargeTown)).getText()),true)) {
+            fortniteAddLargeTowns(context, locations);
+        }
+
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxCommonTown)).getText()),true)) {
+            fortniteAddCommonTowns(context, locations);
+        }
+        if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxUnnamedTown)).getText()),true)) {
         return locations;
     }
 
-    private static void fortniteAddMediumTowns(Context context, ArrayList<Location> locations) {
+    private static void fortniteAddCommonTowns(Context context, ArrayList<Location> locations) {
         locations.add(new Location(245,155,Radius.getMedium(),context.getString(R.string.junkJunction)));
         locations.add(new Location(190,295,Radius.getMedium(),context.getString(R.string.hauntedHills)));
         locations.add(new Location(112,570,Radius.getMedium(),context.getString(R.string.snobbyShores)));
@@ -33,7 +45,7 @@ public class Locations {
 
     }
 
-    private static void fortniteAddBigTowns(Context context, ArrayList<Location> locations){
+    private static void fortniteAddLargeTowns(Context context, ArrayList<Location> locations){
         locations.add(new Location(350,370,Radius.getLarge(),context.getString(R.string.pleasantPark)));
         locations.add(new Location(465,622,Radius.getLarge(),context.getString(R.string.tiltedTowers)));
         locations.add(new Location(292,780,Radius.getLarge(),context.getString(R.string.greasyGrove)));
