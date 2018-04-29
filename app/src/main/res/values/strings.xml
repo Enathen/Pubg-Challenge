@@ -77,4 +77,13 @@
     <string name="squadOrDuoCarePackageNoKIll">If your in squad or duo, if any member sees a care-package you must immediately run to it. You may not kill enemies that try to hinder you. when you or another team picked up the care package you may start killing enemies</string>
     <string name="squadOrDuoCareKillFriend">If your in squad or duo, Kill your teammate/s and win. Do not tell them</string>
     <string name="duoSquad">Squad Duo</string>
+    <string name="fortnitePrison">Prison</string>
+    <string name="forniteHouseOnHill">House On The Hill</string>
+    <string name="fortniteMotel">Motel</string>
+    <string name="fortniteIndoorFootballField">Indoor Football Field</string>
+    <string name="fortniteCargoArea">Cargo Area</string>
+    <string name="fortniteFactory">Factory</string>
+    <string name="fortniteRaceTrack">Race Track</string>
+    <string name="fortniteCampSite">Camp Site</string>
+    <string name="fortniteNorthHouses">North Houses</string>
 </resources>

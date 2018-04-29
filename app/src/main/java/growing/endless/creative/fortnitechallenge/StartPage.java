@@ -78,6 +78,8 @@ public class StartPage extends AppCompatActivity {
     private View buttonRollClick;
     private InterstitialAd mInterstitialAd;
     LinkedHashMap<String, Map> maps = new LinkedHashMap<>();
+    private boolean notYetLoaded= false;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,11 +187,21 @@ public class StartPage extends AppCompatActivity {
             sharedPreferencesEditor.putInt(
                     "interstitial", interstitial+1);
             sharedPreferencesEditor.apply();
+            if(notYetLoaded){
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+
+                }else{
+                    notYetLoaded = true;
+                }
+            }
         }else{
 
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
 
+            }else{
+                notYetLoaded = true;
             }
 
             sharedPreferencesEditor.putInt(
