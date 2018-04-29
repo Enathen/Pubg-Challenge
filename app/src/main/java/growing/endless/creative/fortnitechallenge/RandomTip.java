@@ -22,6 +22,10 @@ class RandomTip {
         arrayList.add(R.string.tipDontKill);
         arrayList.add(R.string.tipOhReally);
         arrayList.add(R.string.tipBiggerChangeSquad);
+        arrayList.add(R.string.tipAtLeast);
+        arrayList.add(R.string.tipStayAlive);
+        arrayList.add(R.string.tipMama);
+        arrayList.add(R.string.tipMamadad);
 
         return arrayList;
     }

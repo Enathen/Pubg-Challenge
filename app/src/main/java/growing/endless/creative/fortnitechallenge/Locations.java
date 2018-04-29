@@ -34,7 +34,7 @@ public class Locations {
 
     private static void fortniteAddUnnamedTowns(Context context, ArrayList<Location> locations) {
         locations.add(new Location(955,920,Radius.getMedium(),context.getString(R.string.fortnitePrison)));
-        locations.add(new Location(630,885,Radius.getMedium(),context.getString(R.string.forniteHouseOnHill)));
+        locations.add(new Location(630,885,Radius.getMedium(),context.getString(R.string.fortniteHouseOnHill)));
         locations.add(new Location(505,215,Radius.getMedium(),context.getString(R.string.fortniteMotel)));
         locations.add(new Location(302,602,Radius.getMedium(),context.getString(R.string.fortniteIndoorFootballField)));
         locations.add(new Location(915,505,Radius.getMedium(),context.getString(R.string.fortniteCargoArea)));

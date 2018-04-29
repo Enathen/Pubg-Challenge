@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import static growing.endless.creative.fortnitechallenge.Maps.createMaps;
-import static growing.endless.creative.fortnitechallenge.Playstyle.getPlaystyle;
+import static growing.endless.creative.fortnitechallenge.Challenge.getChallenge;
 import static growing.endless.creative.fortnitechallenge.RandomPicker.getRandom;
 
 public class StartPage extends AppCompatActivity {
@@ -217,7 +217,7 @@ public class StartPage extends AppCompatActivity {
             ((TextView)findViewById(R.id.textViewLocation)).setText(location.getName());
 
         }
-        ArrayList<String> playstyle = getPlaystyle(StartPage.this);
+        ArrayList<String> playstyle = getChallenge(StartPage.this);
         if(playstyle.isEmpty()){
             ((TextView)findViewById(R.id.textViewChallenge)).setText(getString(R.string.noPlaystyle));
         }else{
