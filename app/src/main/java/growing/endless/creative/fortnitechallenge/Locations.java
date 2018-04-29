@@ -27,7 +27,7 @@ public class Locations {
             fortniteAddCommonTowns(context, locations);
         }
         if(sharedPreferences.getBoolean(String.valueOf(((CheckBox)context.findViewById(R.id.checkBoxUnnamedTown)).getText()),true)) {
-            
+
         }
         return locations;
     }
