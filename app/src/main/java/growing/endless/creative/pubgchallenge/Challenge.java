@@ -38,34 +38,53 @@ public class Challenge {
         challenges.add(context.getString(R.string.challengeOnlyHandguns));
         challenges.add(context.getString(R.string.challengeOnlySniper));
         challenges.add(context.getString(R.string.challengeHilltop));
+
     }
 
     private static void addSquadDuo(Activity context, ArrayList<String> challenges) {
-        challenges.add(context.getString(R.string.squadOrDuoLove));
         challenges.add(context.getString(R.string.squadOrDuoSilence));
         challenges.add(context.getString(R.string.squadOrDuoCarePackage));
         challenges.add(context.getString(R.string.squadOrDuoPackageNoKIll));
         challenges.add(context.getString(R.string.squadOrDuoKillFriendFinal));
         challenges.add(context.getString(R.string.squadOrDuoLetterE));
+        challenges.add(context.getString(R.string.squadOrDuoKills25));
+        challenges.add(context.getString(R.string.squadOrDuoKill5));
+        challenges.add(context.getString(R.string.squadOrDuoKill5Teamates));
+        challenges.add(context.getString(R.string.squadOrDuoKill5TeamatesReader));
+        challenges.add(context.getString(R.string.squadOrDuoKillSolo));
+        challenges.add(context.getString(R.string.squadOrDuoKillSoloWorst));
+        challenges.add(context.getString(R.string.squadOrDuoKillSoloBest));
+        challenges.add(context.getString(R.string.squadOrDuoSensitivity));
+        challenges.add(context.getString(R.string.squadOrDuoSensitivityEveryone));
+        challenges.add(context.getString(R.string.squadOrDuoLocation));
+        challenges.add(context.getString(R.string.squadOrDuoDownMansSaved));
+        challenges.add(context.getString(R.string.squadOrDuoDownMansDead));
+        challenges.add(context.getString(R.string.squadOrDuoSilenceCoordinates));
+
     }
 
     private static void addFunny(Activity context, ArrayList<String> challenges) {
         challenges.add(context.getString(R.string.challengeSneak));
-        challenges.add(context.getString(R.string.challengeThreesixtie));
-        challenges.add(context.getString(R.string.challengeDance));
+        challenges.add(context.getString(R.string.challengeThreeSixty));
         challenges.add(context.getString(R.string.challengeLink));
+        challenges.add(context.getString(R.string.challengeIncreaseSens));
+        challenges.add(context.getString(R.string.challengeLowerSens));
 
     }
 
     private static void addYouWillDie(Context context, ArrayList<String> challenges) {
         challenges.add(context.getString(R.string.challengeWithoutKilling));
-
+        challenges.add(context.getString(R.string.challengeVSS));
+        challenges.add(context.getString(R.string.challengeWIN94));
+        challenges.add(context.getString(R.string.challengeCrossbow));
+        challenges.add(context.getString(R.string.challengePan));
         challenges.add(context.getString(R.string.challengeOnlyHipfireSniper));
-
         challenges.add(context.getString(R.string.challengeOnlyMelee));
         challenges.add(context.getString(R.string.challengeWinTwoTimes));
         challenges.add(context.getString(R.string.challengeWinWithoutKilling));
         challenges.add(context.getString(R.string.challengeKillTen));
+        challenges.add(context.getString(R.string.challengeMouseKeyboard));
+
 
     }
 }

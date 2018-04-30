@@ -79,6 +79,7 @@ public class StartPage extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     LinkedHashMap<String, Map> maps = new LinkedHashMap<>();
     private boolean notYetLoaded= false;
+    private Map map;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -98,11 +99,11 @@ public class StartPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Map map = (Map) maps.values().toArray()[0];
-                buttonRollClick(viewById, map);
+                map = (Map) maps.values().toArray()[0];
+                buttonRollClick(viewById);
             }
         });
-        Map map = (Map) maps.values().toArray()[0];
+        map = (Map) maps.values().toArray()[0];
         new DrawOnMap(viewById,map.getMap(), this);
         if(maps.size()>1){
             findViewById(R.id.linearLayoutSpinner).setVisibility(View.VISIBLE);
@@ -117,12 +118,12 @@ public class StartPage extends AppCompatActivity {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                     final TouchImageView touchImageView = (TouchImageView) findViewById(R.id.imageViewClick);
-                    final Map map = maps.get(((TextView) view).getText());
+                    map = maps.get(((TextView) view).getText());
                     touchImageView.setImageDrawable(getDrawable(map.getMap()));
                     buttonRollClick.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            buttonRollClick(touchImageView, map);
+                            buttonRollClick(touchImageView);
                         }
                     });
                     ((TextView)findViewById(R.id.textViewLocation)).setText(getString(R.string.location));
@@ -167,15 +168,17 @@ public class StartPage extends AppCompatActivity {
         final SharedPreferences.Editor sharedPreferencesEditor =
                 PreferenceManager.getDefaultSharedPreferences(this).edit();
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @SuppressLint("ApplySharedPref")
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 sharedPreferencesEditor.putBoolean(String.valueOf(compoundButton.getText()),b).commit();
                 maps = createMaps(StartPage.this);
+                map = maps.get(map.getMapName());
             }
         });
 
     }
-    public void buttonRollClick(TouchImageView viewById, Map map){
+    public void buttonRollClick(TouchImageView viewById){
         final SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         SharedPreferences.Editor sharedPreferencesEditor =
@@ -190,7 +193,7 @@ public class StartPage extends AppCompatActivity {
             if(notYetLoaded){
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
-
+                    notYetLoaded = false;
                 }else{
                     notYetLoaded = true;
                 }
@@ -199,7 +202,7 @@ public class StartPage extends AppCompatActivity {
 
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
-
+                notYetLoaded = false;
             }else{
                 notYetLoaded = true;
             }
