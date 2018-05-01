@@ -9,7 +9,21 @@ import java.util.Random;
  */
 
 public class RandomPicker {
-    static public Object getRandom(ArrayList<?> tArrayList) {
-        return tArrayList.get(new Random().nextInt(tArrayList.size()));
+    private int random;
+    public Object getRandom(ArrayList<?> tArrayList) {
+        if(tArrayList.size()>1){
+            while (true){
+                int i = new Random().nextInt(tArrayList.size());
+                if(i != random){
+                    random = i;
+                    break;
+                }
+            }
+
+        }else{
+            random = 0;
+        }
+
+        return tArrayList.get(random);
     }
 }

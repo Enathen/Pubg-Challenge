@@ -26,22 +26,23 @@ import com.google.android.gms.ads.InterstitialAd;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
-import static growing.endless.creative.pubgchallenge.Maps.createMaps;
 import static growing.endless.creative.pubgchallenge.Challenge.getChallenge;
-import static growing.endless.creative.pubgchallenge.RandomPicker.getRandom;
+import static growing.endless.creative.pubgchallenge.Maps.createMaps;
 
 public class StartPage extends AppCompatActivity {
 
     private TextView mTextMessage;
-
+    private int NaviigationItem;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Log.d(TAG, "onNavigationItemSelected: "+ item.getItemId());
+            NaviigationItem = item.getItemId();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+
                     if(findViewById(R.id.lin) != null){
                         findViewById(R.id.lin).setVisibility(View.VISIBLE);
                     }else{
@@ -74,12 +75,22 @@ public class StartPage extends AppCompatActivity {
             return false;
         }
     };
+
     private String TAG = "STARTPAGE";
     private View buttonRollClick;
     private InterstitialAd mInterstitialAd;
     LinkedHashMap<String, Map> maps = new LinkedHashMap<>();
     private boolean notYetLoaded= false;
     private Map map;
+    private RandomPicker randomPickerLocation = new RandomPicker();
+    private RandomPicker randomPickerChallenge= new RandomPicker();
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        ((BottomNavigationView)findViewById(R.id.navigation)).getMenu().getItem(0).setChecked(true);
+    }
+
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -88,7 +99,7 @@ public class StartPage extends AppCompatActivity {
         setContentView(R.layout.activity_start_page);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7255077910");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3607354849437438/7234401779");
         mTextMessage = (TextView) findViewById(R.id.message);
         final TouchImageView viewById = (TouchImageView) findViewById(R.id.imageViewClick);
         maps = createMaps(this);
@@ -117,8 +128,9 @@ public class StartPage extends AppCompatActivity {
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    final TouchImageView touchImageView = (TouchImageView) findViewById(R.id.imageViewClick);
-                    map = maps.get(((TextView) view).getText());
+                    final TouchImageView touchImageView =  findViewById(R.id.imageViewClick);
+                    String text = parent.getItemAtPosition(position).toString().trim();
+                    map = maps.get(text);
                     touchImageView.setImageDrawable(getDrawable(map.getMap()));
                     buttonRollClick.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -215,16 +227,18 @@ public class StartPage extends AppCompatActivity {
             ((TextView)findViewById(R.id.textViewLocation)).setText(getString(R.string.noLocation));
             new DrawOnMap(viewById,map.getMap(),StartPage.this);
         }else{
-            Location location = (Location) getRandom(map.getLocations());
+
+            Location location = (Location) randomPickerLocation.getRandom(map.getLocations());
             new DrawOnMap(viewById,map.getMap(), location, StartPage.this);
             ((TextView)findViewById(R.id.textViewLocation)).setText(location.getName());
 
         }
-        ArrayList<String> playstyle = getChallenge(StartPage.this);
-        if(playstyle.isEmpty()){
+        ArrayList<String> challenge = getChallenge(StartPage.this);
+        if(challenge.isEmpty()){
             ((TextView)findViewById(R.id.textViewChallenge)).setText(getString(R.string.noPlaystyle));
         }else{
-            ((TextView)findViewById(R.id.textViewChallenge)).setText((String) getRandom(playstyle));
+            String random = (String) randomPickerChallenge.getRandom(challenge);
+            ((TextView)findViewById(R.id.textViewChallenge)).setText(random);
 
         }
     }

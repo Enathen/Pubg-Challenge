@@ -59,7 +59,7 @@
                     android:id="@+id/checkBoxChallengeEasy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/easy"
                     android:textColor="@color/colorWhite"
@@ -69,7 +69,7 @@
                     android:id="@+id/checkBoxChallengeYouWillDieAlot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/youWillDieAlot"
                     android:textColor="@color/colorWhite"
@@ -79,7 +79,7 @@
                     android:id="@+id/checkBoxChallengeFunny"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/funny"
                     android:textColor="@color/colorWhite"
@@ -89,7 +89,7 @@
                     android:id="@+id/checkBoxChallengeDuoSquad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/duoSquad"
                     android:textColor="@color/colorWhite"
@@ -111,7 +111,7 @@
                     android:fontFamily="@font/luckiestguy"
                     android:gravity="center"
                     android:text="@string/locations"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="22sp" />
 
             </LinearLayout>
@@ -125,7 +125,7 @@
                     android:id="@+id/checkBoxCommonTown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorAccent"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/commonTown"
                     android:textColor="@color/colorWhite"
@@ -135,7 +135,7 @@
                     android:id="@+id/checkBoxLargeTown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorAccent"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/largeTown"
                     android:textColor="@color/colorWhite"
@@ -145,14 +145,13 @@
                     android:id="@+id/checkBoxUnnamedTown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorAccent"
+                    android:buttonTint="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
                     android:text="@string/unnamedTown"
                     android:textColor="@color/colorWhite"
                     android:textSize="22sp" />
 
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -161,28 +160,28 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/imageViewAPP"
                     android:layout_width="50dp"
 
                     android:layout_height="50dp"
-
+                    android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:src="@drawable/insta" />
+                    android:src="@drawable/fortnite" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/textViewAPP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="5"
                     android:autoLink="web"
+                    android:textColorLink="@color/colorWhite"
                     android:fontFamily="@font/luckiestguy"
-                    android:text="@string/crengr"
+                    android:text="@string/Fortnite"
 
                     android:textColor="@color/colorWhite"
-                    android:textSize="22sp"
+                    android:textSize="14sp"
                     android:textStyle="italic" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -226,6 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
+                android:textColorLink="@color/colorWhite"
                 android:fontFamily="@font/luckiestguy"
                 android:text="Google AdMob https://www.apache.org/licenses/LICENSE-2.0"
                 android:textAlignment="center"
@@ -237,6 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
+                android:textColorLink="@color/colorWhite"
                 android:fontFamily="@font/luckiestguy"
                 android:text="TouchImageView Licence: https://github.com/MikeOrtiz/TouchImageView/blob/master/LICENSE"
                 android:textAlignment="center"
@@ -248,6 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
+                android:textColorLink="@color/colorWhite"
                 android:fontFamily="@font/luckiestguy"
                 android:text="Google Font Luckiest guy https://fonts.google.com/specimen/Luckiest+Guy"
                 android:textAlignment="center"
@@ -272,7 +274,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/colorAccent"
+            android:backgroundTint="@color/colorPrimary"
 
 
             android:gravity="center"
@@ -368,6 +370,7 @@
                 android:id="@+id/textViewChallenge"
                 android:layout_width="match_parent"
                 android:autoLink="web"
+                android:textColorLink="@color/colorWhite"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"

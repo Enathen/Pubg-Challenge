@@ -56,18 +56,18 @@
     <string name="fortniteCampSite">Camp Site</string>
     <string name="fortniteNorthHouses">North Houses</string>
 
-    <string name="challengeOnlyHandguns">You may only use handguns!</string>
+    <string name="challengeOnlyHandguns">You may only use handguns</string>
     <string name="challengeWithoutKilling">Only kill the last person that\'s not on your team</string>
-    <string name="challengeOnlySniper">You may only use snipers</string>
-    <string name="challengeOnlyHipfireSniper">You may only use snipers, also you may only use hip-fire</string>
+    <string name="challengeOnlySniper">You may only use sniper rifles</string>
+    <string name="challengeOnlyHipfireSniper">You may only use sniper rifles, also you may only use hip-fire</string>
     <string name="challengeOnlyShotgun">You may only use Shotguns</string>
     <string name="challengeOnlyMelee">You may only use melee. Though, if you kill someone you may use their weapons</string>
 
     <string name="tipToWin">Try To Win</string>
     <string name="tipDontDie">Try not To die</string>
     <string name="tipDontRPG">Try not To rpg yourself</string>
-    <string name="tipDontKill">Try not To Kill yourself, mid game</string>
-    <string name="tipWin">You win if your last alive</string>
+    <string name="tipDontKill">Try not To Kill yourself, in game</string>
+    <string name="tipWin">You win if you don\'t die</string>
     <string name="tipNoShit">No Shit!</string>
     <string name="tipDontGrenade">Try not to grenade yourself</string>
     <string name="tipLoose">You loose if you die</string>
@@ -76,34 +76,32 @@
     <string name="tipStayAlive">Try to stay alive</string>
     <string name="tipAtLeast">You can at least try to win</string>
     <string name="tipMama">Mama didn\'t raise no quitters</string>
-    <string name="tipMamadad">Mama didn\'t raise no quitters, but apparently your dad did</string>
+    <string name="tipMamadad">Mama didn\'t raise no quitters… but apparently your dad did</string>
 
 
-    <string name="squadOrDuoLove">If your in squad or duo, tell them you love them! Keep on play and love</string>
     <string name="squadOrDuoSilence">If your in squad or duo, you may not communicate</string>
-    <string name="squadOrDuoCarePackage">If your in squad or duo, if any member sees a care-package you must immediately run to it. You may kill enemies that try to hinder you.</string>
-    <string name="squadOrDuoPackageNoKIll">If your in squad or duo, if any member sees a care-package you must immediately run to it. You may not kill enemies that try to hinder you. when you or another team picked up the care package you may start killing enemies</string>
-    <string name="squadOrDuoCareKillFriend">If your in squad or duo, Kill your teammate/teammates and win. Do not tell them</string>
-    <string name="squadOrDuoKillFriendFinal">If your in squad or duo, Kill your teammate/teammates when only 1 squad left except yours, and still win the game. Do not tell them</string>
+    <string name="squadOrDuoSilenceCoordinates">If your in squad or duo, you may not communicate except saying coordinates.</string>
+    <string name="squadOrDuoCarePackage">If your in squad or duo, if any teammate sees a care-package you must immediately run towards it. You may kill enemies that try to kill you.</string>
+    <string name="squadOrDuoPackageNoKIll">If your in squad or duo, if a teammate sees a care-package you must immediately run towards it. You may not fight enemies until the care-package is opened.</string>
+    <string name="squadOrDuoCareKillFriend">If your in squad or duo, Kill your teammate/teammates and then win the game. Do not tell them.</string>
+    <string name="squadOrDuoKillFriendFinal">If your in squad or duo, Kill your teammate/teammates when only 1 squad left except yours, and still win the game.</string>
     <string name="squadOrDuoLetterE">If your in squad or duo, you may not say the letter E when communicating</string>
-    <string name="squadOrDuoKills25">If your in squad or duo, Kill 25 people together</string>
+    <string name="squadOrDuoKills25">If your in squad or duo, Squad: Kill 25 people together. Duo: 13 together.</string>
     <string name="squadOrDuoKill5">if your in squad or duo kill 5 each</string>
-    <string name="squadOrDuoKill5Teamates">if your in squad or duo, kill 5 each(reader power: you get 2 kills from killing a teammate)</string>
-    <string name="squadOrDuoKill5TeamatesReader">if your in squad or duo, kill 5 each (reader power: you get 3 kills from killing a teammate. However, you need 6 kills)</string>
+    <string name="squadOrDuoKill5Teamates">if your in squad or duo, kill 5 each(reader, you get 2 kills from killing a teammate)</string>
+    <string name="squadOrDuoKill5TeamatesReader">if your in squad or duo, kill 5 each (reader, you get 3 kills from killing a teammate. However, you need 6 kills)</string>
     <string name="squadOrDuoKillSolo">if your in squad or duo, 1 person need to have all the kills</string>
-    <string name="squadOrDuoKillSoloWorst">if your in squad or duo, 1 person need to have all the kills and also the worst</string>
-    <string name="squadOrDuoKillSoloBest">if your in squad or duo, 1 person need to have all the kills and also the best</string>
+    <string name="squadOrDuoKillSoloWorst">if your in squad or duo, The least experienced person in your team need to have all the kills</string>
+    <string name="squadOrDuoKillSoloBest">if your in squad or duo, The most experienced person in your team need to have all the kills</string>
     <string name="squadOrDuoSensitivity">if your in squad or duo, 2 people need to increase their sensitivity by 3 times, and the other 2 decrease by half. if you\'re duo 1 do increase 1 do decrease.  </string>
     <string name="squadOrDuoSensitivityEveryone">if your in squad or duo, everyone increase their sensitivity by 3 times. choose one in your team to increase it by 5 times </string>
-    <string name="squadOrDuoLocation">if your in squad or duo, Get to location. Squad: 1 member jump every 10 seconds from the bus Duo: one every 20 seconds</string>
     <string name="squadOrDuoDownMansDead">if your in squad or duo, if a teammate is down you may not help him</string>
     <string name="squadOrDuoDownMansSaved">if your in squad or duo, if a teammate is down you must save him</string>
 
-    <string name="challengeWinTwoTimes">Win two times on same location</string>
+    <string name="challengeWinTwoTimes">Win two times at the same location</string>
     <string name="challengeWinWithoutKilling">Win without killing someone!</string>
-    <string name="challengeSneak">You must sneak up to enemies, if they spot you, you must retreat to hiding. If you fire first before being spotted you got 3 seconds to kill otherwise you must retreat.</string>
-    <string name="challengeThreeSixty">you must before killing an enemy do a 360</string>
-    <string name="challengeDance">you must before killing an enemy make a dance move</string>
+    <string name="challengeSneak">You must sneak up to enemies, if they spot you, you must retreat to hiding. If you fired before being spotted you got 3 seconds to kill otherwise you must retreat.</string>
+    <string name="challengeThreeSixty">before killing an enemy you must do a 360</string>
     <string name="challengeHilltop">You must always get to the highest hilltop in the Zone</string>
     <string name="challengeKillTen">Kill ten enemies to win!</string>
     <string name="challengeLink">https://www.epicgames.com/fortnite/forums/battle-royale/royale-with-cheese/115380-a-fun-challenge</string>
@@ -204,6 +202,6 @@
     <string name="challengeCrossbow">If you find a Crossbow you must drop all your other weapons and only use the Crossbow</string>
     <string name="challengePan">Paninator, win with a pan</string>
     <string name="challengeLowerSens">Decrease current sensitivity by half</string>
-    <string name="squadOrDuoSilenceCoordinates">If your in squad or duo, you may not communicate except saying coordinates</string>
+    <string name="Fortnite">https://play.google.com/store/apps/details?id=growing.endless.creative.fortniteChallenge</string>
 
 </resources>

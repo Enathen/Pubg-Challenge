@@ -56,7 +56,6 @@ public class Challenge {
         challenges.add(context.getString(R.string.squadOrDuoKillSoloBest));
         challenges.add(context.getString(R.string.squadOrDuoSensitivity));
         challenges.add(context.getString(R.string.squadOrDuoSensitivityEveryone));
-        challenges.add(context.getString(R.string.squadOrDuoLocation));
         challenges.add(context.getString(R.string.squadOrDuoDownMansSaved));
         challenges.add(context.getString(R.string.squadOrDuoDownMansDead));
         challenges.add(context.getString(R.string.squadOrDuoSilenceCoordinates));
